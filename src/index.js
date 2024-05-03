@@ -4,26 +4,38 @@ import './styles/index.css';
 
  
 
-
-
-document.querySelector('.search').addEventListener('click', onButtonClick);
-
-async function onButtonClick(){  
-    const input = document.querySelector('.input')  
+document.querySelector('.input').addEventListener('keypress' , async function searchEnterEventHandler(event) {
+    if(event.key === 'Enter'){
+    const input = document.querySelector('.input').value  
     try{
-        const forecast = await fetchWeatherForecast(input.value);
+        const forecast = await fetchWeatherForecast(input);
         displayForeCast(forecast);
     }catch(error){
         console.log(`ERROR: ${error}`)
     }
 }
+});
+
+// document.querySelector('.search').addEventListener('click', onButtonClick);
+
+// async function searchEnterEventHandler(){  
+//     const input = document.querySelector('.input')  
+//     try{
+//         const forecast = await fetchWeatherForecast(input.value);
+//         displayForeCast(forecast);
+//     }catch(error){
+//         console.log(`ERROR: ${error}`)
+//     }
+// }
+
+
 function displayForeCast(futureWeather){
     console.log(futureWeather)
     futureWeather.forecast.forecastday.forEach(day =>{
         console.log(day.date);
     })
 
-    
+
 }
    
 

@@ -1,0 +1,25 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0; 
+    padding: 0;
+}
+.main-container{
+    border: solid black ;
+    width: 70vw;
+    right: auto;
+}
+
+/*-----------------------------------------------------*/
+
+.search-bar{
+    border: solid red;
+    margin-top: 1rem;
+}
