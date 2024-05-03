@@ -1,0 +1,16 @@
+.heading{
+    border: solid;
+}
+.main-container{
+    border: solid red;
+    height: 90vh;
+    display: flex;
+}
+.left-container{
+    border: solid blue;
+    flex: 1;
+}
+.right-container{
+    border: solid purple;
+    flex: 6;
+}
