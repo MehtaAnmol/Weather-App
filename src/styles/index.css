@@ -20,6 +20,26 @@ body {
 /*-----------------------------------------------------*/
 
 .search-bar{
-    border: solid red;
     margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    padding: 0.7rem 2rem;
+    border-radius: 2rem;
+    background-color: antiquewhite;
+}
+.search-icon{
+    height: 35px;
+    width: 35px;
+    align-self: center;
+}
+.input{
+    width: 100%;
+    font-size: 1.3rem;
+    padding: .6rem 2rem;
+    border: none;
+    background: transparent;
+}
+.input:focus {
+    outline: none; /* Remove focus outline */
+    border-color: transparent; /* Make border transparent on focus */
 }

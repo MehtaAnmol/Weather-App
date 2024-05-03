@@ -16,17 +16,6 @@ document.querySelector('.input').addEventListener('keypress' , async function se
 }
 });
 
-// document.querySelector('.search').addEventListener('click', onButtonClick);
-
-// async function searchEnterEventHandler(){  
-//     const input = document.querySelector('.input')  
-//     try{
-//         const forecast = await fetchWeatherForecast(input.value);
-//         displayForeCast(forecast);
-//     }catch(error){
-//         console.log(`ERROR: ${error}`)
-//     }
-// }
 
 
 function displayForeCast(futureWeather){
