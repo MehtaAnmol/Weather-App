@@ -88,14 +88,14 @@ body {
 }
 .cw-min-max{
     border: solid yellow;
-    padding: 1rem;
+    padding: 1rem 0;
     display: flex;
 }
 .cw-min,
 .cw-max{
     border: solid red;
     display: flex;
-    padding: 0.5rem;
+    padding: 0 0.5rem 0 0;
 }
 .cw-min-icon,
 .cw-max-icon{
@@ -108,7 +108,7 @@ body {
 }
 .cw-min-info-heading,
 .cw-max-info-heading{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 0.5rem 0.5rem 0 0.5rem;
     font-style: italic;
 }
@@ -116,11 +116,55 @@ body {
 .cw-max-info-temp{
     border: solid;
     padding: 0.5rem 0.5rem 0 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
-.additional-info{
-    border: solid orange;
-    flex: 1;
+
+
+/*--------------------------------------------------*/
+
+.additional-info {
+    border: solid blue 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.additional-info > div {
+    width: calc(25% - 20px); /* 25% width for 4 divs in a row, minus margin */
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    border: solid;
+}
+
+.additional-info img {
+    width: 50px; /* Adjust the width of the icons as needed */
+    height: auto;
+    border: solid;
+}
+
+.additional-info .ai-cor-info-container,
+.additional-info .ai-w-info-container,
+.additional-info .ai-sr-info-container,
+.additional-info .ai-ss-info-container,
+.additional-info .ai-uv-info-container,
+.additional-info .ai-p-info-container,
+.additional-info .ai-h-info-container,
+.additional-info .ai-g-info-container {
+    margin-top: 5px; /* Adjust the spacing between icon and info */
+    border: solid;
+}
+.ai-cor-info-heading,
+.ai-w-info-heading,
+.ai-sr-info-heading,
+.ai-ss-info-heading,
+.ai-uv-info-heading,
+.ai-p-info-heading,
+.ai-h-info-heading,
+.ai-g-info-heading{
+    border: solid;
+    padding: 0.5rem 0;
 }

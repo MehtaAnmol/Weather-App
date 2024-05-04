@@ -24,8 +24,8 @@ function displayCurrentWeather(response){
     console.log(response)
     const cTemp = response.current.temp_c;
     const cCondition = response.current.condition.text;
-    const currMin = response.forecast.forecastday[0].day.mintemp_c
-    const currMax = response.forecast.forecastday[0].day.maxtemp_c;
+    const currMin =Math.floor( response.forecast.forecastday[0].day.mintemp_c);
+    const currMax = Math.floor( response.forecast.forecastday[0].day.maxtemp_c);
     const currentWeatherCode = response.current.condition.code;
     const dayOrNight = response.current.is_day;
 
