@@ -67,27 +67,57 @@ body {
     flex: 1;  
     display: flex;
     flex-direction: column;
-    padding-top: 1rem;
 }
 .cw-temp{
-    border: solid black;
-    font-size: 3rem;
+    font-size: 6rem;
 }
 .cw-weather{
-    border: solid blue;
+    border: solid;
     font-size: 1.5rem;
-    padding: 1rem;
-    margin-top: 1rem;
+    padding-left: 0.9rem;
+    font-style: italic;
 }
-.cw-icon img{
+.cw-icon-container{
+    border: dotted;
+}
+.cw-icon-container img{
     border: solid black;
     flex: 1;
-    width: 250px;
+    width: 200px;
+    height: 200px;
 }
 .cw-min-max{
     border: solid yellow;
     padding: 1rem;
-    margin-top: 1rem;
+    display: flex;
+}
+.cw-min,
+.cw-max{
+    border: solid red;
+    display: flex;
+    padding: 0.5rem;
+}
+.cw-min-icon,
+.cw-max-icon{
+    border: solid blue;
+    width: 50px;
+}
+.cw-max-info-heading,
+.cw-min-info-heading{
+    border: solid;
+}
+.cw-min-info-heading,
+.cw-max-info-heading{
+    font-size: 1.2rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    font-style: italic;
+}
+.cw-min-info-temp,
+.cw-max-info-temp{
+    border: solid;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .additional-info{
