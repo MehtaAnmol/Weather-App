@@ -26,11 +26,9 @@ body {
     padding: 0.7rem 2rem;
     border-radius: 2rem;
     background-color: antiquewhite;
+    border: solid black;
 }
 .search-icon{
-    height: 35px;
-    width: 35px;
-    align-self: center;
 }
 .input{
     width: 100%;
