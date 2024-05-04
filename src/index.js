@@ -10,14 +10,12 @@ document.querySelector('.input').addEventListener('keypress' , async function se
     try{
         const response = await fetchWeatherForecast(input);
         displayCurrentWeather(response);
+        displayAdditionalInformation(response);
     }catch(error){
         console.log(`ERROR: ${error}`)
     }
 }
 });
-
-
-const currentTemp = document.querySelector('.cw-temp')
 
 
 function displayCurrentWeather(response){
@@ -36,5 +34,32 @@ function displayCurrentWeather(response){
     document.querySelector('.cw-max-info-temp').innerHTML = `${currMax}<sup>o</sup>C`
 }
    
+function displayAdditionalInformation(response){
+    // const cor = response.forecast.forecastday[0].day.daily_chance_of_rain;
+    // const wind = response.current.wind_kph;
+    // const uvIndex = response.current.uv;
+    // const pressure = response.current.pressure_in;
+    // const humidity = response.current.humidity;
+    // const gust = response.current.gust_kph;
+    // const sunrise = response.forecast.forecastday[0].astro.sunrise;
+    // const sunset = response.forecast.forecastday[0].astro.sunset;
+    // console.log(cor , wind , uvIndex , pressure, humidity, gust, sunrise, sunset)
+    const {current ,forecast, location} = response;
+    const {forecastday} = forecast;
+    const [day1] = forecastday;
 
+    const {wind_kph, uv, pressure_in, humidity, gust_kph, condition ,is_day} = current;
+    const {code} = condition;
+    const {astro} = day1;
+    const {sunset, sunrise} = astro;
+
+    document.querySelector('.ai-cor-info').innerHTML = day1.day.daily_chance_of_rain;
+    document.querySelector('.ai-w-info').innerHTML = wind_kph;
+    document.querySelector('.ai-sr-info').innerHTML = sunrise;
+    document.querySelector('.ai-ss-info').innerHTML = sunset;
+    document.querySelector('.ai-uv-info').innerHTML = uv;
+    document.querySelector('.ai-p-info').innerHTML = pressure_in;
+    document.querySelector('.ai-h-info').innerHTML = humidity;
+    document.querySelector('.ai-g-info').innerHTML = gust_kph;
+}
 
