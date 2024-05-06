@@ -56,7 +56,6 @@ function displayAdditionalInformation(response){
 }
 
 function displayForecast(response){
-    var d = new Date();
     const now = new Date();
     let currentHour = now.getHours();
     let minutes = now.getMinutes();
@@ -83,11 +82,43 @@ function displayForecast(response){
             <img src="/src/images/weather/${code}-${is_day}.svg" alt="">
             <div>
                 <h3>${i}:${minutes}${amPm}</h3>
-                <h3 class="hourly__temperature">${hour[i].temp_c}</h3>
+                <h3 class="hourly__temperature">${hour[i].temp_c}<sup>o</sup>C</h3>
             </div>
         </div>
     `
-    document.querySelector('.forecast').innerHTML = hourlyHTML;
+    document.querySelector('.forecast__hourly__today').innerHTML = hourlyHTML;
     }
+   //------------------------------------------------
+    let forecastHTML = "";
+    const date = new Date();
+    let today = date.getDate();
+        if(today < 10 ) today = "0" + today;
+    let month = date.getMonth();
+        if(month < 10) month = '0' + month;
+       
+    console.log(month)
+    let j= 0;
+    for(let i of forecastday){
+        forecastHTML +=`
+            <div class="forecast__day">
+                <img src="/src/images/weather/${i.day.condition.code}-${is_day}.svg" alt="">
+                <div class="day_info">
+                    <h4>${+today +j}-${month}</h4>
+                    <div class="day__minmax">
+                        <div class="day__min">
+                            <h4>min</h4>
+                            <h4>${i.day.mintemp_c}</h4>
+                        </div>
+                        <div class="day__max">
+                            <h4>max</h4>
+                            <h4>${i.day.maxtemp_c}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+        document.querySelector('.forecast__this__week').innerHTML = forecastHTML;
+    j++}
+
    
 }
