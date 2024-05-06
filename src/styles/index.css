@@ -3,6 +3,7 @@
     --paragraph: 1.6rem;
     --heading3: 1.6rem;
     --heading4: 1.2rem;
+    --heading2: 2.5rem;
 
     --font-abel: "Abel", sans-serif;
     --font-shadows-into-light: "Shadows Into Light", cursive;
@@ -80,6 +81,10 @@ h1{
     font-size: var(--heading1);
     font-family: var(--font-abel);
 } 
+h2{
+    font-size: var(--heading2);
+    font-family: var(--font-abel);
+}
 h3{
     font-size: var(--heading3);
     font-family: var(--font-shadows-into-light);
@@ -195,3 +200,29 @@ body{
     padding-inline-end: 0.5rem;
 }
 
+/*---------------------------------------*/
+.forecast{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.forecast__title > h2{
+    margin-block-start: 3rem;
+    text-align: center;
+    padding-block-end: 1rem;
+}
+.forecast__hourly{
+    display: flex;
+    width: fit-content;
+    margin-inline-end: 1rem;
+    padding: 1rem;
+    border: solid;
+    border-radius: 1rem;
+}
+.forecast__hourly > img{
+    width: 5rem;
+}
+.forecast__hourly > div > h3{
+    padding-inline: 0.5rem;
+    padding-block-start: 0.4rem;
+}

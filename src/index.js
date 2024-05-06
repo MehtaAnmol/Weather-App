@@ -2,7 +2,7 @@
 import './styles/index.css'
 import { fetchWeatherForecast } from './pages/fetchWeatherForecast.js';
 
- 
+
 
 document.querySelector('.input').addEventListener('keypress' , async function searchEnterEventHandler(event) {
     if(event.key === 'Enter'){
@@ -11,6 +11,7 @@ document.querySelector('.input').addEventListener('keypress' , async function se
         const response = await fetchWeatherForecast(input);
         displayCurrentWeather(response);
         displayAdditionalInformation(response);
+        displayForecast(response);
     }catch(error){
         console.log(`ERROR: ${error}`)
     }
@@ -35,15 +36,6 @@ function displayCurrentWeather(response){
 }
    
 function displayAdditionalInformation(response){
-    // const cor = response.forecast.forecastday[0].day.daily_chance_of_rain;
-    // const wind = response.current.wind_kph;
-    // const uvIndex = response.current.uv;
-    // const pressure = response.current.pressure_in;
-    // const humidity = response.current.humidity;
-    // const gust = response.current.gust_kph;
-    // const sunrise = response.forecast.forecastday[0].astro.sunrise;
-    // const sunset = response.forecast.forecastday[0].astro.sunset;
-    // console.log(cor , wind , uvIndex , pressure, humidity, gust, sunrise, sunset)
     const {current ,forecast, location} = response;
     const {forecastday} = forecast;
     const [day1] = forecastday;
@@ -63,3 +55,39 @@ function displayAdditionalInformation(response){
     document.querySelector('.additional-info-gust').innerHTML = gust_kph;
 }
 
+function displayForecast(response){
+    var d = new Date();
+    const now = new Date();
+    let currentHour = now.getHours();
+    let minutes = now.getMinutes();
+        if (minutes < 10) {
+            minutes = '0' + minutes;
+        }
+    let hourlyHTML = "";
+    const {forecast, current} = response;
+    const {is_day} = current;
+    const {forecastday} = forecast;
+    const [day1 ,day2, day3] = forecastday;
+    const {hour} = day1;
+   
+    // const {condition} = hour;
+    // const {code} = condition;
+    
+    const amPm = currentHour >= 12 ? 'PM' : 'AM';
+    let code;
+    for(let i = currentHour; i <= 23 ; i++){
+        code = hour[i].condition.code;
+        console.log(hour[i].temp_c);
+        hourlyHTML += `
+        <div class="forecast__hourly">
+            <img src="/src/images/weather/${code}-${is_day}.svg" alt="">
+            <div>
+                <h3>${i}:${minutes}${amPm}</h3>
+                <h3 class="hourly__temperature">${hour[i].temp_c}</h3>
+            </div>
+        </div>
+    `
+    document.querySelector('.forecast').innerHTML = hourlyHTML;
+    }
+   
+}
