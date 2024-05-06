@@ -3,103 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Indie+Flower&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Indie+Flower&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <!---->
     <title>Document</title>
 </head>
 <body>
-    <div class="main-container">
+    <div class="container">
         <div class="search-bar">
-            <img src='/src/images/search-svgrepo-com (1).svg' class="search-icon">
-            <input type="text" class="input" placeholder="Search for a Location">
+            <img src="/src/images/search-svgrepo-com (1).svg" alt="">
+            <input class ="input" type="text" placeholder="Enter a Location">
         </div>
-        <div class="current-info-container">
-            <div class="main-info">
-                <div class="current-info">
-                    <div class="cw-icon-container">
-                        <img src="/src/images/thunderstorms-night-snow.svg" class="cw-icon" alt="current weather">
-
-                    </div>
-                    <div class="cw-info">
-                        <div class="cw-temp">19.C</div>
-                        <div class="cw-weather">Partially cloudy</div>
-                        <div class="cw-min-max">
-                            <div class="cw-min">
-                                <img class="cw-min-icon" src="/src/images/additional/wi-direction-down.svg" alt="">
-                                <div class="cw-min-info">
-                                    <div class="cw-min-info-heading">Min</div>
-                                    <div class="cw-min-info-temp">23</div>
+        <div class="main">
+            <div class="current">
+                <div class="current__primary">
+                    <img src="/src/images/weather/1000-0.svg" class="current__primary__image" alt="">
+                    <div class="current__primary__info">
+                        <h1 class="current__temperature">19^C</h1>
+                        <p class="current__weather">partially cloudy</p>
+                        <div class="current__minmax">
+                            <div class="current__min">
+                                <img src="/src/images/additional/wi-direction-down.svg" alt="">
+                                <div class="current__min__info">
+                                    <h3>Min</h3>
+                                    <h3  class="current__min__temperature">23^C</h3>
                                 </div>
                             </div>
-                            <div class="cw-max">
-                                <img class="cw-max-icon" src="/src/images/additional/wi-direction-up.svg" alt="">
-                                <div class="cw-max-info">
-                                    <div class="cw-max-info-heading">Max</div>
-                                    <div class="cw-max-info-temp">44</div>
+                            <div class="current__max">
+                                <img src="/src/images/additional/wi-direction-up.svg" alt="">
+                                <div class="current__max__info">
+                                    <h3>Max</h3>
+                                    <h3  class='current__max__temperature'>23^C</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="current__additional">
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/rain.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>Chance of rain</h4>
+                            <h4 class="additional-info-rain">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/wind.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>wind</h4>
+                            <h4 class="additional-info-wind">34</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/sunrise.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>sunrise</h4>
+                            <h4 class="additional-info-sunrise">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/sunset.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>sunrset</h4>
+                            <h4 class="additional-info-sunset">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/sun-svgrepo-com.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>uv index</h4>
+                            <h4 class="additional-info-uv">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/rain.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>pressure</h4>
+                            <h4 class="additional-info-pressure">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/rain.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>humidity</h4>
+                            <h4 class="additional-info-humidity">no</h4>
+                        </div>
+                    </div>
+                    <div class="current__additional__info">
+                        <img src="/src/images/additional/gust.svg" alt="">
+                        <div class="additional__info__info">
+                            <h4>gust</h4>
+                            <h4 class="additional-info-gust">no</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="additional-info">
-                <div class="ai-cor-container">
-                    <img src="/src/images/additional/rain.svg" alt="" class="ai-cor-icon">
-                    <div class="ai-cor-info-container">
-                        <div class="ai-cor-info-heading">Chance of rain</div>
-                        <div class="ai-cor-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-w-container">
-                    <img src="/src/images/additional/wind.svg" alt="" class="ai-w-icon">
-                    <div class="ai-w-info-container">
-                        <div class="ai-w-info-heading">Wind</div>
-                        <div class="ai-w-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-sr-container">
-                    <img src="/src/images/additional/sunrise.svg" alt="" class="ai-sr-icon">
-                    <div class="ai-sr-info-container">
-                        <div class="ai-sr-info-heading">Sunrise</div>
-                        <div class="ai-sr-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-ss-container">
-                    <img src="/src/images/additional/sunset.svg" alt="" class="ai-ss-icon">
-                    <div class="ai-ss-info-container">
-                        <div class="ai-ss-info-heading">Sunset</div>
-                        <div class="ai-ss-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-uv-container">
-                    <img src="/src/images/additional/sun-svgrepo-com.svg" alt="" class="ai-uv-icon">
-                    <div class="ai-uv-info-container">
-                        <div class="ai-uv-info-heading">UV index</div>
-                        <div class="ai-uv-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-p-container">
-                    <img src="/src/images/weather/1000-0.svg" alt="" class="ai-p-icon">
-                    <div class="ai-p-info-container">
-                        <div class="ai-p-info-heading">Pressure</div>
-                        <div class="ai-p-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-h-container">
-                    <img src="/src/images/additional/" alt="" class="ai-h-icon">
-                    <div class="ai-h-info-container">
-                        <div class="ai-h-info-heading">Humidity</div>
-                        <div class="ai-h-info">89%</div>
-                    </div>
-                </div>
-                <div class="ai-g-container">
-                    <img src="/src/images/additional/gust.svg" alt="" class="ai-g-icon">
-                    <div class="ai-g-info-container">
-                        <div class="ai-g-info-heading">Gust</div>
-                        <div class="ai-g-info">89%</div>
-                    </div>
-                </div>
-            </div>
-        </div>  
+            <div class="forecast"></div>
+        </div>
     </div>
-    
 </body>
 </html>

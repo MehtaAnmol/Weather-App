@@ -1,170 +1,197 @@
+:root{
+    --heading1: 5rem;
+    --paragraph: 1.6rem;
+    --heading3: 1.6rem;
+    --heading4: 1.2rem;
+
+    --font-abel: "Abel", sans-serif;
+    --font-shadows-into-light: "Shadows Into Light", cursive;
+    --font-roboto-mono: "Roboto Mono", monospace;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
 html {
-    box-sizing: border-box;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
-*, *:before, *:after {
-    box-sizing: inherit;
-}
-body {
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    margin: 0; 
+
+*{
+    margin: 0;
     padding: 0;
+    font: inherit;
 }
-.main-container{
-    border: solid black ;
-    width: 70vw;
-    right: auto;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
-
-/*-----------------------------------------------------*/
-
-.search-bar{
-    margin-top: 1rem;
-    width: 100%;
-    display: flex;
-    padding: 0.7rem 2rem;
-    border-radius: 2rem;
-    background-color: antiquewhite;
-    border: solid black;
+html,
+body{
+    height: 100%;
+}
+/* Set core body defaults */
+body {
+  line-height: 1.5;
 }
 
-.input{
-    width: 100%;
-    font-size: 1.3rem;
-    padding: .6rem 2rem;
-    border: none;
-    background: transparent;
-}
-.input:focus {
-    outline: none; /* Remove focus outline */
-    border-color: transparent; /* Make border transparent on focus */
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
 }
 
-/*-------------------------------------------------------------------*/
-.current-info-container{
-    border: solid red;
-    height: 60%;
-    margin-top: 1rem;
-    display: flex;
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap:wrap;
+  overflow-wrap: break-word;
 }
-.main-info{
-    border: solid blue;
-    flex: 1;
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg{
+  max-width: 100%;
+  display: block;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+h1{
+    font-size: var(--heading1);
+    font-family: var(--font-abel);
+} 
+h3{
+    font-size: var(--heading3);
+    font-family: var(--font-shadows-into-light);
+    text-align: center;
+}
+h4{
+    font-size: var(--heading4);
+    font-family: var(--font-shadows-into-light);
+    text-align: center;
+    padding-inline: 0.2rem;
+}  
+p{
+    font-size: var(--paragraph);
+    font-family: var(--font-shadows-into-light);
+    padding-inline-start: 1rem;
+}
+
+/*---------------------------*/
+body{
     display: flex;
     justify-content: center;
-    align-items: center;
 }
-.current-info{
-    border: solid yellow 3px;
-    min-height: 300px;
-    min-width: 400px;
-    display: flex;
-    padding-top: 1rem;
-}
-.cw-info{
-    border: solid brown;
-    flex: 1;  
+.container{
+    /*max-width: 900px;*/
+    margin: 1rem;
+    width: 1200px;
     display: flex;
     flex-direction: column;
 }
-.cw-temp{
-    font-size: 6rem;
-}
-.cw-weather{
-    border: solid;
-    font-size: 1.5rem;
-    padding-left: 0.9rem;
-    font-style: italic;
-}
-.cw-icon-container{
-    border: dotted;
-}
-.cw-icon-container img{
-    border: solid black;
-    flex: 1;
-    width: 200px;
-    height: 200px;
-}
-.cw-min-max{
-    border: solid yellow;
-    padding: 1rem 0;
-    display: flex;
-}
-.cw-min,
-.cw-max{
+.search-bar{
     border: solid red;
+    margin-block: 2rem;
     display: flex;
-    padding: 0 0.5rem 0 0;
+    gap: 1rem;
+    border-radius: 2rem;
+    padding-inline: 3rem;
+    width: fit-content;
+    align-self: center;
 }
-.cw-min-icon,
-.cw-max-icon{
-    border: solid blue;
-    width: 50px;
+.search-bar > input{
+    padding-block:0.8rem;
+    font-size: 1.5rem;
+    border: none;
 }
-.cw-max-info-heading,
-.cw-min-info-heading{
-    border: solid;
+.search-bar > img{
+    width: 2rem;
 }
-.cw-min-info-heading,
-.cw-max-info-heading{
-    font-size: 1.1rem;
-    padding: 0.5rem 0.5rem 0 0.5rem;
-    font-style: italic;
+.search-bar > input:focus {
+    outline: none;
+    border-color: transparent;
 }
-.cw-min-info-temp,
-.cw-max-info-temp{
-    border: solid;
-    padding: 0.5rem 0.5rem 0 0.5rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-
-
 /*--------------------------------------------------*/
 
-.additional-info {
-    border: solid blue 3px;
+/*.main{
+    border: solid;
+}*/
+.current{
     display: flex;
     flex-wrap: wrap;
 }
+.current__additional{
+    flex: 1;
+}
+.current__primary{
+    display: flex;
+    padding-inline: 4rem;
+    padding-block: 1rem;
+    flex-wrap: wrap;
+    justify-content:center ;
+}
+.current__primary > img{
+    width: 11rem;
+}
+.current__primary__info{
+    width: fit-content;
+    padding-inline-end: 1rem;
+}
+.current__minmax{
+    padding-block-start: 1rem;
+    display: flex;
+}
+.current__min{
+    display: flex;
+}
+.current__min > img{
+    width: 2rem;
+}
+.current__max{
+    display: flex;
+}
+.current__max > img{
+    width: 2rem;
+}
 
-.additional-info > div {
-    width: calc(25% - 20px); /* 25% width for 4 divs in a row, minus margin */
-    margin: 10px;
+
+/*-------------------------------*/
+
+.current__additional{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    border: solid;
+    padding: 2rem;
 }
 
-.additional-info img {
-    width: 50px; /* Adjust the width of the icons as needed */
-    height: auto;
-    border: solid;
+.current__additional__info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 33.33%;
+    height: fit-content;
+
+}
+.current__additional__info > img{
+    width: 3rem;
+    padding-inline-end: 0.5rem;
 }
 
-.additional-info .ai-cor-info-container,
-.additional-info .ai-w-info-container,
-.additional-info .ai-sr-info-container,
-.additional-info .ai-ss-info-container,
-.additional-info .ai-uv-info-container,
-.additional-info .ai-p-info-container,
-.additional-info .ai-h-info-container,
-.additional-info .ai-g-info-container {
-    margin-top: 5px; /* Adjust the spacing between icon and info */
-    border: solid;
-}
-.ai-cor-info-heading,
-.ai-w-info-heading,
-.ai-sr-info-heading,
-.ai-ss-info-heading,
-.ai-uv-info-heading,
-.ai-p-info-heading,
-.ai-h-info-heading,
-.ai-g-info-heading{
-    border: solid;
-    padding: 0.5rem 0;
-}

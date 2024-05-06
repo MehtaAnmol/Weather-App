@@ -27,11 +27,11 @@ function displayCurrentWeather(response){
     const currentWeatherCode = response.current.condition.code;
     const dayOrNight = response.current.is_day;
 
-    document.querySelector('.cw-icon').setAttribute('src',`/src/images/weather/${currentWeatherCode}-${dayOrNight}.svg`)
-    document.querySelector('.cw-temp').innerHTML = `${cTemp}<sup>o</sup>C`;
-    document.querySelector('.cw-weather').innerHTML = `${cCondition}`
-    document.querySelector('.cw-min-info-temp').innerHTML = `${currMin}<sup>o</sup>C`
-    document.querySelector('.cw-max-info-temp').innerHTML = `${currMax}<sup>o</sup>C`
+    document.querySelector('.current__primary__image').setAttribute('src',`/src/images/weather/${currentWeatherCode}-${dayOrNight}.svg`)
+    document.querySelector('.current__temperature').innerHTML = `${cTemp}<sup>o</sup>C`;
+    document.querySelector('.current__weather').innerHTML = `${cCondition}`
+    document.querySelector('.current__min__temperature').innerHTML = `${currMin}<sup>o</sup>C`
+    document.querySelector('.current__max__temperature').innerHTML = `${currMax}<sup>o</sup>C`
 }
    
 function displayAdditionalInformation(response){
@@ -53,13 +53,13 @@ function displayAdditionalInformation(response){
     const {astro} = day1;
     const {sunset, sunrise} = astro;
 
-    document.querySelector('.ai-cor-info').innerHTML = day1.day.daily_chance_of_rain;
-    document.querySelector('.ai-w-info').innerHTML = wind_kph;
-    document.querySelector('.ai-sr-info').innerHTML = sunrise;
-    document.querySelector('.ai-ss-info').innerHTML = sunset;
-    document.querySelector('.ai-uv-info').innerHTML = uv;
-    document.querySelector('.ai-p-info').innerHTML = pressure_in;
-    document.querySelector('.ai-h-info').innerHTML = humidity;
-    document.querySelector('.ai-g-info').innerHTML = gust_kph;
+    document.querySelector('.additional-info-rain').innerHTML = day1.day.daily_chance_of_rain;
+    document.querySelector('.additional-info-wind').innerHTML = wind_kph;
+    document.querySelector('.additional-info-sunrise').innerHTML = sunrise;
+    document.querySelector('.additional-info-sunset').innerHTML = sunset;
+    document.querySelector('.additional-info-uv').innerHTML = uv;
+    document.querySelector('.additional-info-pressure').innerHTML = pressure_in;
+    document.querySelector('.additional-info-humidity').innerHTML = humidity;
+    document.querySelector('.additional-info-gust').innerHTML = gust_kph;
 }
 
