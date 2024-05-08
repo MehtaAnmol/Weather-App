@@ -107,6 +107,9 @@ body{
     display: flex;
     justify-content: center;
 }
+.hidden{
+    display: none;
+}
 .container{
     /*max-width: 900px;*/
     margin: 1rem;
