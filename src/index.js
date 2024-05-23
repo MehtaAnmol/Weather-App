@@ -137,7 +137,7 @@ import { getMinutes } from 'date-fns';
     
     async function displayDefault(){
         try{
-            const response = await fetch('http://api.weatherapi.com/v1/forecast.json?key=7fe00839801248baa93112333240105&q=$New_Delhi')
+            const response = await fetch('https://api.weatherapi.com/v1/forecast.json?key=7fe00839801248baa93112333240105&q=$New_Delhi')
             const weather = await response.json();
             displayCurrentWeather(weather);
             displayAdditionalInformation(weather);
